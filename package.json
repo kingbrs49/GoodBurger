@@ -1,0 +1,24 @@
+{
+  "name": "goodburger",
+  "version": "1.0.0",
+  "description": "Welcome to Good Burger, Home of the Good Burger, Can I take your order? **huh**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingbrs49/GoodBurger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingbrs49/GoodBurger/issues"
+  },
+  "homepage": "https://github.com/kingbrs49/GoodBurger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
