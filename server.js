@@ -1,25 +1,15 @@
-var exphbs = require("express-handlebars");
-var express = require("express");
-var mysql = require("mysql");
+const express = require("express");
 
-var routes = require('./controllers/burgers_controller.js')
+const PORT = process.env.PORT || 3000;
 
-var PORT = process.env.PORT || 3000;
+const burgerController = require("./controllers/burgers_controller");
 
-var app = express();
+const app = express();
 
-// var router = express.Router();
-
-app.use(express.static("./public"));
-
+// For parsing JSON into req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(routes)
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
 app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log(`PORT IS LISTENING ON (${PORT})`);
 });
