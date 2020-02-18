@@ -16,6 +16,16 @@ app.post("/api/burgers", function (req, res) {
     });
 });
 
-app.put("/api/burgers", function (req, res) {});
+app.put("/api/burgers", function (req, res) {
+    req.body = {
+        id: '12',
+        devoured: true,
+        burger_name: 'baconator'
+    };
+
+    burger.updateOne(req.body, function (results) {
+        res.json(results);
+    });
+});
 
 module.exports = app;

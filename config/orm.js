@@ -36,7 +36,7 @@ const orm = {
         (${columns.toString()}) VALUES 
         (${generateQuestionMarks(values.length)})`;
 
-        connection.query(queryString, values, function (err, results) {
+        connection.query(queryString, values, CB, function (err, results) {
             if (err) {
                 throw err;
             }
@@ -52,7 +52,7 @@ const orm = {
         const queryString = `UPDATE ${tableName} SET ${objToSql(values)} WHERE ${condition}`;
 
         connection.query(queryString, function (err, results) {
-
+            
         })
     }
 };
