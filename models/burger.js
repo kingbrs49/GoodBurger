@@ -4,7 +4,7 @@ const burger = {
     findAll: function (CB) {
         orm.findAll("burgers", function (resultsData) {
             CB(resultsData);
-        })
+        });
     },
     createOne: function (createData, CB) {
 
