@@ -69,6 +69,6 @@ const orm = {
     }
 };
 
-orm.createOne('burgers', ['burger_name', 'devoured'], ['random test', false]);
+//orm.createOne('burgers', ['burger_name', 'devoured'], ['random test', false]);
 
 module.exports = orm;

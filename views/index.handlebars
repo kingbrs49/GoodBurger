@@ -1,8 +1,58 @@
-<ul>
-    {{#each burgers}}
-    <li>
-        <p value="0" id="burgerName">{{this.id}}: {{this.burger_name}}</p>
-        <button class="devour">EAT IT! Ha!</button>
-    </li>
-    {{/each}}
-</ul>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Good Burger! Home of The Good Burger!</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="form-group">
+                    <label>Can I Take Your Order? Hah!</label>
+                    <input id="burger-name" type="text" class="form-control" aria-describedby="emailHelp"
+                        placeholder="Create Your Own GoodBurger! Hah!">
+                </div>
+                <button id="burger-submit" type="button" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 not-devoured">
+
+            {{#each hbObj}}
+            {{#unless this.devoured}}
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top"
+                    src="https://laistassets.scprdev.org/i/81e72a4f55886c30eaaeb4b01055adc0/5d07c9b9f4faed0009dd3df3-eight.jpg"
+                    alt="Card Image Caption">
+                <div class="card-body">
+                    <h5 class="card=title">
+                        {{ this.burger_name }}
+                    </h5>
+                    <button data-id={{this.id}} data-devoured="true" type="button" class="devour btn btn-danger" >EAT ME!!
+                        HAH!</button>
+                </div>
+            </div>
+            {{/unless}}
+            {{/each}}
+
+        </div>
+        <div class="col-md-6 devoured">
+
+            {{#each hbObj}}
+            {{#if this.devoured}}
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top"
+                    src="https://consequenceofsound.net/wp-content/uploads/2019/05/good-burger-returns-kenan-kel-all-that-reunion-revival.png?w=807"
+                    alt="Card Image Caption">
+                <div class="card-body">
+                    <h5 class="card=title">
+                        {{ this.burger_name }}
+                    </h5>
+                    <a href="#" class="btn btn-danger">YOU ATE ME!! HAH!</a>
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
