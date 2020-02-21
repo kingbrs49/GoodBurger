@@ -11,12 +11,13 @@ app.get("/api/burgers", function (req, res) {
 app.post("/api/burgers", function (req, res) {
     burger.createOne(req.body, function (results) {
         res.json(results);
+        console.log(results);
     });
 });
 
 app.put("/api/burgers", function (req, res) {
     req.body = {
-        id: '12',
+        id: req.body.id,
         devoured: true,
     };
 

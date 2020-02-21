@@ -11,7 +11,7 @@ const burger = {
         const columns = ["burger_name", "devoured"];
         const values = [createData.burger_name, createData.devoured]
         
-        orm.createOne("burgers", columns, values, function () {
+        orm.createOne("burgers", columns, values, function (resultsData) {
             CB(resultsData);
         });
     },

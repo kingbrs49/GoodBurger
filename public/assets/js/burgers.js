@@ -3,7 +3,7 @@ $(document).ready(function () {
     function devourBurger() {
         const burgerObj = {
             id: $(this).attr('data-id'),
-            devoured: true
+            devoured: 1
         };
         
         $.ajax({
@@ -15,20 +15,21 @@ $(document).ready(function () {
             window.location.reload();
         });
     }
-    $("#burger-submit").on("button", function (e) {
+    $("#burger-submit").on("click", function (e) {
         e.preventDefault();
         const newBurger = {
-            name: $("#burger_name").val().trim(),
-            devour: $("[name=devour]:checked").val().trim()
+            burger_name: $("#burger-name").val().trim(),
+            devoured: 0
         };
+
+        console.log(newBurger)
 
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
-        }).then(
-            function () {
-                console.log("created new burger");
-                location.reload();
+        }).then(function () {
+                console.log("created new burger: " + newBurger);
+                window.location.reload();
             }
         );
     });
