@@ -17,7 +17,10 @@
     <hr>
     <div class="row">
         <div class="col-md-6 not-devoured">
-
+            <h1 class="display-4">
+                Yet To Be Eaten
+            </h1>
+            <hr>
             {{#each hbObj}}
             {{#unless this.devoured}}
             <div class="card" style="width: 18rem">
@@ -37,7 +40,10 @@
 
         </div>
         <div class="col-md-6 devoured">
-
+            <h1 class="display-4">
+                Already Eaten
+            </h1>
+            <hr>
             {{#each hbObj}}
             {{#if this.devoured}}
             <div class="card" style="width: 18rem">
