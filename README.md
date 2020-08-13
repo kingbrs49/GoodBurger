@@ -43,5 +43,5 @@ node server
 
 ![Welcome to GoodBurger!](https://github.com/kingbrs49/GoodBurger/blob/master/GoodBurger.jpg?raw=true)
 
-
-
+## Deployed Link
+https://good-burger-622.herokuapp.com/
